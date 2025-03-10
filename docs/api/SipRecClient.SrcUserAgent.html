@@ -1,0 +1,497 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class SrcUserAgent </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class SrcUserAgent ">
+    
+    <meta name="description" content="SIP Recording Client (SRC) User Agent class. This class handles all calls being recorded by a SIP Recording Server (SRS) using a single, permanent connection to the SRS. It also logs NG9-1-1 I3V3 events.  To use this class, construct an instance of it, hook the events and then call the Start() method.   Call the Shutdown() method to close all network connections and release resources when the application is closing or when the interface to the SIPREC recorder is no longer needed.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.json">
+      <meta property="docfx:tocrel" content="toc.json">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../articles/intro.html" title="Articles">Articles</a>
+                      </li>
+                      <li>
+                          <a href="../api/index.html" title="Api Documentation">Api Documentation</a>
+                      </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="SipRecClient.html" title="SipRecClient" class="">SipRecClient</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="SipRecClient.MediaLabel.html" title="MediaLabel" class="">MediaLabel</a>
+                          </li>
+                          <li class="">
+                            <a href="SipRecClient.SipRecRecorderSettings.html" title="SipRecRecorderSettings" class="">SipRecRecorderSettings</a>
+                          </li>
+                          <li class="">
+                            <a href="SipRecClient.SipRecSettings.html" title="SipRecSettings" class="">SipRecSettings</a>
+                          </li>
+                          <li class="">
+                            <a href="SipRecClient.SrcCallParameters.html" title="SrcCallParameters" class="">SrcCallParameters</a>
+                          </li>
+                          <li class="">
+                            <a href="SipRecClient.SrcManager.html" title="SrcManager" class="">SrcManager</a>
+                          </li>
+                          <li class="active">
+                            <a href="SipRecClient.SrcUserAgent.html" title="SrcUserAgent" class="active">SrcUserAgent</a>
+                          </li>
+                        </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="SipRecClient.SrcUserAgent">
+
+
+
+  <h1 id="SipRecClient_SrcUserAgent" data-uid="SipRecClient.SrcUserAgent" class="text-break">Class SrcUserAgent</h1>
+  <div class="markdown level0 summary"><p>SIP Recording Client (SRC) User Agent class. This class handles all calls being recorded by a SIP Recording
+Server (SRS) using a single, permanent connection to the SRS. It also logs NG9-1-1 I3V3 events.</p>
+<p>
+To use this class, construct an instance of it, hook the events and then call the Start() method.
+</p>
+<p>
+Call the Shutdown() method to close all network connections and release resources when the application
+is closing or when the interface to the SIPREC recorder is no longer needed.
+</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Threading/QueuedActionWorkerTask.cs">QueuedActionWorkerTask</a></div>
+    <div class="level2"><span class="xref">SrcUserAgent</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Threading/QueuedActionWorkerTask.cs">QueuedActionWorkerTask.EnqueueWork(Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="SipRecClient.html">SipRecClient</a></h6>
+  <h6><strong>Assembly</strong>: SipRecClient.dll</h6>
+  <h5 id="SipRecClient_SrcUserAgent_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SrcUserAgent : QueuedActionWorkerTask</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+
+
+  <a id="SipRecClient_SrcUserAgent__ctor_" data-uid="SipRecClient.SrcUserAgent.#ctor*"></a>
+  <h4 id="SipRecClient_SrcUserAgent__ctor_SipRecClient_SipRecRecorderSettings_SipLib_Media_MediaPortManager_System_Security_Cryptography_X509Certificates_X509Certificate2_System_String_System_String_System_String_I3V3_LoggingHelpers_I3LogEventClientMgr_System_Boolean_" data-uid="SipRecClient.SrcUserAgent.#ctor(SipRecClient.SipRecRecorderSettings,SipLib.Media.MediaPortManager,System.Security.Cryptography.X509Certificates.X509Certificate2,System.String,System.String,System.String,I3V3.LoggingHelpers.I3LogEventClientMgr,System.Boolean)">SrcUserAgent(SipRecRecorderSettings, MediaPortManager, X509Certificate2, string, string, string, I3LogEventClientMgr, bool)</h4>
+  <div class="markdown level1 summary"><p>Constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SrcUserAgent(SipRecRecorderSettings settings, MediaPortManager portManager, X509Certificate2 certificate, string agencyID, string agentID, string elementID, I3LogEventClientMgr i3LogEventClentMgr, bool enableLogging)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SipRecClient.SipRecRecorderSettings.html">SipRecRecorderSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Configuration settings</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Media/MediaPortManager.cs">MediaPortManager</a></td>
+        <td><span class="parametername">portManager</span></td>
+        <td><p>Used for allocating UDP and TCP ports for media streams.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.x509certificates.x509certificate2">X509Certificate2</a></td>
+        <td><span class="parametername">certificate</span></td>
+        <td><p>X.509 certificate to use for SIP over TLS (SIPS) and MSRP over
+TLS (MSRPS). Required even if TLS is not currently in use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">agencyID</span></td>
+        <td><p>Identity of the agency that is recording and logging calls</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">agentID</span></td>
+        <td><p>Identity of the agent or call taker that is recording and logging calls.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">elementID</span></td>
+        <td><p>NG9-1-1 Element Identifier of the entity recording calls.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://github.com/PhrSite/Ng911Lib/blob/d5dc20e6a856c3a1b0d828e4e4dc0cef5c3a53ee/ClassLibrary/I3V3.LoggingHelpers/I3LogEventClientMgr.cs">I3LogEventClientMgr</a></td>
+        <td><span class="parametername">i3LogEventClentMgr</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">enableLogging</span></td>
+        <td><p>If true then I3 event logging is enabled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="SipRecClient_SrcUserAgent_Enabled_" data-uid="SipRecClient.SrcUserAgent.Enabled*"></a>
+  <h4 id="SipRecClient_SrcUserAgent_Enabled" data-uid="SipRecClient.SrcUserAgent.Enabled">Enabled</h4>
+  <div class="markdown level1 summary"><p>Gets the Enabled setting</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Enabled { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="SipRecClient_SrcUserAgent_SrsResponding_" data-uid="SipRecClient.SrcUserAgent.SrsResponding*"></a>
+  <h4 id="SipRecClient_SrcUserAgent_SrsResponding" data-uid="SipRecClient.SrcUserAgent.SrsResponding">SrsResponding</h4>
+  <div class="markdown level1 summary"><p>Gets the status of the SIP Recording Server (SRS)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SrsResponding { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="SipRecClient_SrcUserAgent_DoTimedEvents_" data-uid="SipRecClient.SrcUserAgent.DoTimedEvents*"></a>
+  <h4 id="SipRecClient_SrcUserAgent_DoTimedEvents" data-uid="SipRecClient.SrcUserAgent.DoTimedEvents">DoTimedEvents()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void DoTimedEvents()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Threading/QueuedActionWorkerTask.cs">QueuedActionWorkerTask.DoTimedEvents()</a></div>
+
+
+  <a id="SipRecClient_SrcUserAgent_HandleReInvite_" data-uid="SipRecClient.SrcUserAgent.HandleReInvite*"></a>
+  <h4 id="SipRecClient_SrcUserAgent_HandleReInvite_SipRecClient_SrcCallParameters_" data-uid="SipRecClient.SrcUserAgent.HandleReInvite(SipRecClient.SrcCallParameters)">HandleReInvite(SrcCallParameters)</h4>
+  <div class="markdown level1 summary"><p>Call this method after the call being recorded has been re-invited. A re-INVITE can occur in order to
+re-target media and/or to add new media to an existing call.</p>
+<p>
+If the call being recorded is re-invited just to retarget existing media, then it is necessary to
+hook the events of any RtpChannel and MsrpConnection objects of the call and it is not necessary to
+send a re-INVITE to the SRS or to rebuild the SIPREC metadata.
+</p>
+<p>
+If media is added to the call being recorded, then it is necessary to send a re-INVITE request to the
+SRS with updated SIPREC metadata.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void HandleReInvite(SrcCallParameters newSrcCallParameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SipRecClient.SrcCallParameters.html">SrcCallParameters</a></td>
+        <td><span class="parametername">newSrcCallParameters</span></td>
+        <td><p>Updated parameters for the SRC call</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="SipRecClient_SrcUserAgent_Shutdown_" data-uid="SipRecClient.SrcUserAgent.Shutdown*"></a>
+  <h4 id="SipRecClient_SrcUserAgent_Shutdown" data-uid="SipRecClient.SrcUserAgent.Shutdown">Shutdown()</h4>
+  <div class="markdown level1 summary"><p>Shuts down all SIP transport connections and releases resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task Shutdown()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Threading/QueuedActionWorkerTask.cs">QueuedActionWorkerTask.Shutdown()</a></div>
+
+
+  <a id="SipRecClient_SrcUserAgent_Start_" data-uid="SipRecClient.SrcUserAgent.Start*"></a>
+  <h4 id="SipRecClient_SrcUserAgent_Start" data-uid="SipRecClient.SrcUserAgent.Start">Start()</h4>
+  <div class="markdown level1 summary"><p>Initializes the SIP transport interface to the SRS and starts communication with the SRS.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Start()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Threading/QueuedActionWorkerTask.cs">QueuedActionWorkerTask.Start()</a></div>
+
+
+  <a id="SipRecClient_SrcUserAgent_StartRecording_" data-uid="SipRecClient.SrcUserAgent.StartRecording*"></a>
+  <h4 id="SipRecClient_SrcUserAgent_StartRecording_SipRecClient_SrcCallParameters_" data-uid="SipRecClient.SrcUserAgent.StartRecording(SipRecClient.SrcCallParameters)">StartRecording(SrcCallParameters)</h4>
+  <div class="markdown level1 summary"><p>Starts the SIPREC recording process for a new call</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StartRecording(SrcCallParameters srcCallParameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SipRecClient.SrcCallParameters.html">SrcCallParameters</a></td>
+        <td><span class="parametername">srcCallParameters</span></td>
+        <td><p>Contains the parameters for the new call</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="SipRecClient_SrcUserAgent_StopRecording_" data-uid="SipRecClient.SrcUserAgent.StopRecording*"></a>
+  <h4 id="SipRecClient_SrcUserAgent_StopRecording_System_String_" data-uid="SipRecClient.SrcUserAgent.StopRecording(System.String)">StopRecording(string)</h4>
+  <div class="markdown level1 summary"><p>Call this method to stop recording when a call has ended.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StopRecording(string strCallId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">strCallId</span></td>
+        <td><p>Call-ID for the call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
