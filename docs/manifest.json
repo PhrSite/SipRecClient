@@ -18,7 +18,11 @@
           "relative_path": "api/SipRecClient.MediaLabel.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SipRecClient.MediaLabel",
+      "Summary": "<p sourcefile=\"api/SipRecClient.MediaLabel.yml\" sourcestartlinenumber=\"1\">Enumeration for the label attribute of an SDP media description for SIPREC media channels.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -28,7 +32,11 @@
           "relative_path": "api/SipRecClient.SipRecRecorderSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SipRecClient.SipRecRecorderSettings",
+      "Summary": "<p sourcefile=\"api/SipRecClient.SipRecRecorderSettings.yml\" sourcestartlinenumber=\"1\">Configuration settings for a single SIPREC media recorder</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -38,7 +46,11 @@
           "relative_path": "api/SipRecClient.SipRecSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SipRecClient.SipRecSettings",
+      "Summary": "<p sourcefile=\"api/SipRecClient.SipRecSettings.yml\" sourcestartlinenumber=\"1\">SIPREC configuration settings</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -48,7 +60,11 @@
           "relative_path": "api/SipRecClient.SrcCallParameters.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SipRecClient.SrcCallParameters",
+      "Summary": "<p sourcefile=\"api/SipRecClient.SrcCallParameters.yml\" sourcestartlinenumber=\"1\">Parameters that the SrcUserAgent will need to set up a SIPREC call to a SIP Recording Server (SRS).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -58,7 +74,11 @@
           "relative_path": "api/SipRecClient.SrcManager.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SipRecClient.SrcManager",
+      "Summary": "<p sourcefile=\"api/SipRecClient.SrcManager.yml\" sourcestartlinenumber=\"1\">Class for managing SipRec Recording Client interfaces to multiple SIPREC Recorder Servers (SRS)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -68,7 +88,25 @@
           "relative_path": "api/SipRecClient.SrcUserAgent.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SipRecClient.SrcUserAgent",
+      "Summary": "<p sourcefile=\"api/SipRecClient.SrcUserAgent.yml\" sourcestartlinenumber=\"1\">SIP Recording Client (SRC) User Agent class. This class handles all calls being recorded by a SIP Recording\nServer (SRS) using a single, permanent connection to the SRS. It also logs NG9-1-1 I3V3 events.</p>\n<p>\nTo use this class, construct an instance of it, hook the events and then call the Start() method.\n</p>\n<p>\nCall the Shutdown() method to close all network connections and release resources when the application\nis closing or when the interface to the SIPREC recorder is no longer needed.\n</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SipRecClient.SrsStatusDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SipRecClient.SrsStatusDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SipRecClient.SrsStatusDelegate",
+      "Summary": "<p sourcefile=\"api/SipRecClient.SrsStatusDelegate.yml\" sourcestartlinenumber=\"1\">Delegate type for the SrsStatusChange event of the SrcManager and the SrcUserAgent classes.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -78,7 +116,11 @@
           "relative_path": "api/SipRecClient.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SipRecClient",
+      "Summary": null
     },
     {
       "type": "Conceptual",
@@ -121,11 +163,21 @@
       "version": ""
     },
     {
-      "type": "Conceptual",
-      "source_relative_path": "getting-started.md",
+      "type": "Resource",
+      "source_relative_path": "images/SipRecClientBlockDiagram.jpg",
       "output": {
-        ".html": {
-          "relative_path": "getting-started.html"
+        "resource": {
+          "relative_path": "images/SipRecClientBlockDiagram.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SipRecClientDetails.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/SipRecClientDetails.jpg"
         }
       },
       "version": ""
@@ -136,16 +188,6 @@
       "output": {
         ".html": {
           "relative_path": "index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "introduction.md",
-      "output": {
-        ".html": {
-          "relative_path": "introduction.html"
         }
       },
       "version": ""

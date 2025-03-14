@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
 
@@ -47,9 +47,6 @@
 
                 <ul class="nav level1 navbar-nav">
                       <li>
-                          <a href="../articles/intro.html" title="Articles">Articles</a>
-                      </li>
-                      <li>
                           <a href="../api/index.html" title="Api Documentation">Api Documentation</a>
                       </li>
                 </ul>
@@ -72,7 +69,7 @@
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
@@ -113,6 +110,9 @@
                           <li class="active">
                             <a href="SipRecClient.SrcUserAgent.html" title="SrcUserAgent" class="active">SrcUserAgent</a>
                           </li>
+                          <li class="">
+                            <a href="SipRecClient.SrsStatusDelegate.html" title="SrsStatusDelegate" class="">SrsStatusDelegate</a>
+                          </li>
                         </ul>
                     </li>
                   </ul>
@@ -142,13 +142,13 @@ is closing or when the interface to the SIPREC recorder is no longer needed.
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Threading/QueuedActionWorkerTask.cs">QueuedActionWorkerTask</a></div>
+    <div class="level1"><a class="xref" href="https://github.com/PhrSite/SipLib/blob/b31609924cfb43a835230e394d280974dfd2162f/ClassLibrary/Threading/QueuedActionWorkerTask.cs">QueuedActionWorkerTask</a></div>
     <div class="level2"><span class="xref">SrcUserAgent</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Threading/QueuedActionWorkerTask.cs">QueuedActionWorkerTask.EnqueueWork(Action)</a>
+      <a class="xref" href="https://github.com/PhrSite/SipLib/blob/b31609924cfb43a835230e394d280974dfd2162f/ClassLibrary/Threading/QueuedActionWorkerTask.cs">QueuedActionWorkerTask.EnqueueWork(Action)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -180,8 +180,13 @@ is closing or when the interface to the SIPREC recorder is no longer needed.
   </div>
   <h3 id="constructors">Constructors
 </h3>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcUserAgent__ctor_SipRecClient_SipRecRecorderSettings_SipLib_Media_MediaPortManager_System_Security_Cryptography_X509Certificates_X509Certificate2_System_String_System_String_System_String_I3V3_LoggingHelpers_I3LogEventClientMgr_System_Boolean_.md&amp;value=---%0Auid%3A%20SipRecClient.SrcUserAgent.%23ctor(SipRecClient.SipRecRecorderSettings%2CSipLib.Media.MediaPortManager%2CSystem.Security.Cryptography.X509Certificates.X509Certificate2%2CSystem.String%2CSystem.String%2CSystem.String%2CI3V3.LoggingHelpers.I3LogEventClientMgr%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcUserAgent.cs/#L90">View Source</a>
+  </span>
   <a id="SipRecClient_SrcUserAgent__ctor_" data-uid="SipRecClient.SrcUserAgent.#ctor*"></a>
   <h4 id="SipRecClient_SrcUserAgent__ctor_SipRecClient_SipRecRecorderSettings_SipLib_Media_MediaPortManager_System_Security_Cryptography_X509Certificates_X509Certificate2_System_String_System_String_System_String_I3V3_LoggingHelpers_I3LogEventClientMgr_System_Boolean_" data-uid="SipRecClient.SrcUserAgent.#ctor(SipRecClient.SipRecRecorderSettings,SipLib.Media.MediaPortManager,System.Security.Cryptography.X509Certificates.X509Certificate2,System.String,System.String,System.String,I3V3.LoggingHelpers.I3LogEventClientMgr,System.Boolean)">SrcUserAgent(SipRecRecorderSettings, MediaPortManager, X509Certificate2, string, string, string, I3LogEventClientMgr, bool)</h4>
   <div class="markdown level1 summary"><p>Constructor</p>
@@ -189,7 +194,7 @@ is closing or when the interface to the SIPREC recorder is no longer needed.
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SrcUserAgent(SipRecRecorderSettings settings, MediaPortManager portManager, X509Certificate2 certificate, string agencyID, string agentID, string elementID, I3LogEventClientMgr i3LogEventClentMgr, bool enableLogging)</code></pre>
+    <pre><code class="lang-csharp hljs">public SrcUserAgent(SipRecRecorderSettings settings, MediaPortManager portManager, X509Certificate2 certificate, string agencyID, string agentID, string elementID, I3LogEventClientMgr i3LogEventClientMgr, bool enableLogging)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -208,7 +213,7 @@ is closing or when the interface to the SIPREC recorder is no longer needed.
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Media/MediaPortManager.cs">MediaPortManager</a></td>
+        <td><a class="xref" href="https://github.com/PhrSite/SipLib/blob/b31609924cfb43a835230e394d280974dfd2162f/ClassLibrary/Media/MediaPortManager.cs">MediaPortManager</a></td>
         <td><span class="parametername">portManager</span></td>
         <td><p>Used for allocating UDP and TCP ports for media streams.</p>
 </td>
@@ -240,8 +245,11 @@ TLS (MSRPS). Required even if TLS is not currently in use.</p>
       </tr>
       <tr>
         <td><a class="xref" href="https://github.com/PhrSite/Ng911Lib/blob/d5dc20e6a856c3a1b0d828e4e4dc0cef5c3a53ee/ClassLibrary/I3V3.LoggingHelpers/I3LogEventClientMgr.cs">I3LogEventClientMgr</a></td>
-        <td><span class="parametername">i3LogEventClentMgr</span></td>
-        <td></td>
+        <td><span class="parametername">i3LogEventClientMgr</span></td>
+        <td><p>Used for logging NG9-1-1 events. Required if NG9-1-1 event logging is required.
+If not using NG9-1-1 event logging, pass in a default I3LogEventClientMgr object that contains an empty list
+of I3LogEventClient objects.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
@@ -253,8 +261,13 @@ TLS (MSRPS). Required even if TLS is not currently in use.</p>
   </table>
   <h3 id="properties">Properties
 </h3>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcUserAgent_Enabled.md&amp;value=---%0Auid%3A%20SipRecClient.SrcUserAgent.Enabled%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcUserAgent.cs/#L273">View Source</a>
+  </span>
   <a id="SipRecClient_SrcUserAgent_Enabled_" data-uid="SipRecClient.SrcUserAgent.Enabled*"></a>
   <h4 id="SipRecClient_SrcUserAgent_Enabled" data-uid="SipRecClient.SrcUserAgent.Enabled">Enabled</h4>
   <div class="markdown level1 summary"><p>Gets the Enabled setting</p>
@@ -279,8 +292,13 @@ TLS (MSRPS). Required even if TLS is not currently in use.</p>
       </tr>
     </tbody>
   </table>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcUserAgent_SrsResponding.md&amp;value=---%0Auid%3A%20SipRecClient.SrcUserAgent.SrsResponding%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcUserAgent.cs/#L227">View Source</a>
+  </span>
   <a id="SipRecClient_SrcUserAgent_SrsResponding_" data-uid="SipRecClient.SrcUserAgent.SrsResponding*"></a>
   <h4 id="SipRecClient_SrcUserAgent_SrsResponding" data-uid="SipRecClient.SrcUserAgent.SrsResponding">SrsResponding</h4>
   <div class="markdown level1 summary"><p>Gets the status of the SIP Recording Server (SRS)</p>
@@ -307,8 +325,13 @@ TLS (MSRPS). Required even if TLS is not currently in use.</p>
   </table>
   <h3 id="methods">Methods
 </h3>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcUserAgent_DoTimedEvents.md&amp;value=---%0Auid%3A%20SipRecClient.SrcUserAgent.DoTimedEvents%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcUserAgent.cs/#L205">View Source</a>
+  </span>
   <a id="SipRecClient_SrcUserAgent_DoTimedEvents_" data-uid="SipRecClient.SrcUserAgent.DoTimedEvents*"></a>
   <h4 id="SipRecClient_SrcUserAgent_DoTimedEvents" data-uid="SipRecClient.SrcUserAgent.DoTimedEvents">DoTimedEvents()</h4>
   <div class="markdown level1 summary"></div>
@@ -318,9 +341,14 @@ TLS (MSRPS). Required even if TLS is not currently in use.</p>
     <pre><code class="lang-csharp hljs">protected override void DoTimedEvents()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Threading/QueuedActionWorkerTask.cs">QueuedActionWorkerTask.DoTimedEvents()</a></div>
-
-
+  <div><a class="xref" href="https://github.com/PhrSite/SipLib/blob/b31609924cfb43a835230e394d280974dfd2162f/ClassLibrary/Threading/QueuedActionWorkerTask.cs">QueuedActionWorkerTask.DoTimedEvents()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcUserAgent_HandleReInvite_SipRecClient_SrcCallParameters_.md&amp;value=---%0Auid%3A%20SipRecClient.SrcUserAgent.HandleReInvite(SipRecClient.SrcCallParameters)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcUserAgent.cs/#L375">View Source</a>
+  </span>
   <a id="SipRecClient_SrcUserAgent_HandleReInvite_" data-uid="SipRecClient.SrcUserAgent.HandleReInvite*"></a>
   <h4 id="SipRecClient_SrcUserAgent_HandleReInvite_SipRecClient_SrcCallParameters_" data-uid="SipRecClient.SrcUserAgent.HandleReInvite(SipRecClient.SrcCallParameters)">HandleReInvite(SrcCallParameters)</h4>
   <div class="markdown level1 summary"><p>Call this method after the call being recorded has been re-invited. A re-INVITE can occur in order to
@@ -358,8 +386,13 @@ SRS with updated SIPREC metadata.
       </tr>
     </tbody>
   </table>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcUserAgent_Shutdown.md&amp;value=---%0Auid%3A%20SipRecClient.SrcUserAgent.Shutdown%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcUserAgent.cs/#L148">View Source</a>
+  </span>
   <a id="SipRecClient_SrcUserAgent_Shutdown_" data-uid="SipRecClient.SrcUserAgent.Shutdown*"></a>
   <h4 id="SipRecClient_SrcUserAgent_Shutdown" data-uid="SipRecClient.SrcUserAgent.Shutdown">Shutdown()</h4>
   <div class="markdown level1 summary"><p>Shuts down all SIP transport connections and releases resources.</p>
@@ -385,9 +418,14 @@ SRS with updated SIPREC metadata.
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Threading/QueuedActionWorkerTask.cs">QueuedActionWorkerTask.Shutdown()</a></div>
-
-
+  <div><a class="xref" href="https://github.com/PhrSite/SipLib/blob/b31609924cfb43a835230e394d280974dfd2162f/ClassLibrary/Threading/QueuedActionWorkerTask.cs">QueuedActionWorkerTask.Shutdown()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcUserAgent_Start.md&amp;value=---%0Auid%3A%20SipRecClient.SrcUserAgent.Start%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcUserAgent.cs/#L127">View Source</a>
+  </span>
   <a id="SipRecClient_SrcUserAgent_Start_" data-uid="SipRecClient.SrcUserAgent.Start*"></a>
   <h4 id="SipRecClient_SrcUserAgent_Start" data-uid="SipRecClient.SrcUserAgent.Start">Start()</h4>
   <div class="markdown level1 summary"><p>Initializes the SIP transport interface to the SRS and starts communication with the SRS.</p>
@@ -398,9 +436,14 @@ SRS with updated SIPREC metadata.
     <pre><code class="lang-csharp hljs">public override void Start()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Threading/QueuedActionWorkerTask.cs">QueuedActionWorkerTask.Start()</a></div>
-
-
+  <div><a class="xref" href="https://github.com/PhrSite/SipLib/blob/b31609924cfb43a835230e394d280974dfd2162f/ClassLibrary/Threading/QueuedActionWorkerTask.cs">QueuedActionWorkerTask.Start()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcUserAgent_StartRecording_SipRecClient_SrcCallParameters_.md&amp;value=---%0Auid%3A%20SipRecClient.SrcUserAgent.StartRecording(SipRecClient.SrcCallParameters)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcUserAgent.cs/#L282">View Source</a>
+  </span>
   <a id="SipRecClient_SrcUserAgent_StartRecording_" data-uid="SipRecClient.SrcUserAgent.StartRecording*"></a>
   <h4 id="SipRecClient_SrcUserAgent_StartRecording_SipRecClient_SrcCallParameters_" data-uid="SipRecClient.SrcUserAgent.StartRecording(SipRecClient.SrcCallParameters)">StartRecording(SrcCallParameters)</h4>
   <div class="markdown level1 summary"><p>Starts the SIPREC recording process for a new call</p>
@@ -428,8 +471,13 @@ SRS with updated SIPREC metadata.
       </tr>
     </tbody>
   </table>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcUserAgent_StopRecording_System_String_.md&amp;value=---%0Auid%3A%20SipRecClient.SrcUserAgent.StopRecording(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcUserAgent.cs/#L889">View Source</a>
+  </span>
   <a id="SipRecClient_SrcUserAgent_StopRecording_" data-uid="SipRecClient.SrcUserAgent.StopRecording*"></a>
   <h4 id="SipRecClient_SrcUserAgent_StopRecording_System_String_" data-uid="SipRecClient.SrcUserAgent.StopRecording(System.String)">StopRecording(string)</h4>
   <div class="markdown level1 summary"><p>Call this method to stop recording when a call has ended.</p>
@@ -457,6 +505,39 @@ SRS with updated SIPREC metadata.
       </tr>
     </tbody>
   </table>
+  <h3 id="events">Events
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcUserAgent_SrsStatusChanged.md&amp;value=---%0Auid%3A%20SipRecClient.SrcUserAgent.SrsStatusChanged%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcUserAgent.cs/#L74">View Source</a>
+  </span>
+  <h4 id="SipRecClient_SrcUserAgent_SrsStatusChanged" data-uid="SipRecClient.SrcUserAgent.SrsStatusChanged">SrsStatusChanged</h4>
+  <div class="markdown level1 summary"><p>This event is fired when the status of the SRS changes. This event will not be fired if the EnableOptions property
+of the SipRecRecorderSettings object for this SRC is false.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event SrsStatusDelegate? SrsStatusChanged</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SipRecClient.SrsStatusDelegate.html">SrsStatusDelegate</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 
 </article>
           </div>
@@ -465,6 +546,12 @@ SRS with updated SIPREC metadata.
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcUserAgent.md&amp;value=---%0Auid%3A%20SipRecClient.SrcUserAgent%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcUserAgent.cs/#L35" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

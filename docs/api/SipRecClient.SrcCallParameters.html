@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
 
@@ -47,9 +47,6 @@
 
                 <ul class="nav level1 navbar-nav">
                       <li>
-                          <a href="../articles/intro.html" title="Articles">Articles</a>
-                      </li>
-                      <li>
                           <a href="../api/index.html" title="Api Documentation">Api Documentation</a>
                       </li>
                 </ul>
@@ -72,7 +69,7 @@
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
@@ -112,6 +109,9 @@
                           </li>
                           <li class="">
                             <a href="SipRecClient.SrcUserAgent.html" title="SrcUserAgent" class="">SrcUserAgent</a>
+                          </li>
+                          <li class="">
+                            <a href="SipRecClient.SrsStatusDelegate.html" title="SrsStatusDelegate" class="">SrsStatusDelegate</a>
                           </li>
                         </ul>
                     </li>
@@ -168,10 +168,15 @@
   </div>
   <h3 id="fields">Fields
 </h3>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcCallParameters_AnsweredSdp.md&amp;value=---%0Auid%3A%20SipRecClient.SrcCallParameters.AnsweredSdp%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcCallParameters.cs/#L37">View Source</a>
+  </span>
   <h4 id="SipRecClient_SrcCallParameters_AnsweredSdp" data-uid="SipRecClient.SrcCallParameters.AnsweredSdp">AnsweredSdp</h4>
-  <div class="markdown level1 summary"><p>SDP that was used to answer the original call.</p>
+  <div class="markdown level1 summary"><p>SDP that was used to answer the call that is to be recorded.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -188,13 +193,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Sdp/Sdp.cs">Sdp</a></td>
-        <td></td>
+        <td><a class="xref" href="https://github.com/PhrSite/SipLib/blob/b31609924cfb43a835230e394d280974dfd2162f/ClassLibrary/Sdp/Sdp.cs">Sdp</a></td>
+        <td><p>The SDP identifies the media types of each RtpChannel and the media encoding (codecs). This information is used
+to build the SDP that is offered to the SRS in the SIP INVITE request to it.</p>
+</td>
       </tr>
     </tbody>
   </table>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcCallParameters_CallId.md&amp;value=---%0Auid%3A%20SipRecClient.SrcCallParameters.CallId%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcCallParameters.cs/#L59">View Source</a>
+  </span>
   <h4 id="SipRecClient_SrcCallParameters_CallId" data-uid="SipRecClient.SrcCallParameters.CallId">CallId</h4>
   <div class="markdown level1 summary"><p>Call-ID header value for the original call.</p>
 </div>
@@ -214,12 +226,18 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
+        <td><p>Required to uniquely identify the call that is being recorded.</p>
+</td>
       </tr>
     </tbody>
   </table>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcCallParameters_CallMsrpConnection.md&amp;value=---%0Auid%3A%20SipRecClient.SrcCallParameters.CallMsrpConnection%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcCallParameters.cs/#L53">View Source</a>
+  </span>
   <h4 id="SipRecClient_SrcCallParameters_CallMsrpConnection" data-uid="SipRecClient.SrcCallParameters.CallMsrpConnection">CallMsrpConnection</h4>
   <div class="markdown level1 summary"><p>MsrpConnection object that is handling the MSRP media for the original call.
 This may be null if the call has no MSRP media.</p>
@@ -239,15 +257,23 @@ This may be null if the call has no MSRP media.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Msrp/MsrpConnection.cs">MsrpConnection</a></td>
-        <td></td>
+        <td><a class="xref" href="https://github.com/PhrSite/SipLib/blob/b31609924cfb43a835230e394d280974dfd2162f/ClassLibrary/Msrp/MsrpConnection.cs">MsrpConnection</a></td>
+        <td><p>The MsrpConnection class handles the received and sent MSRP media. Each SrcUserAgent hooks the events of
+the MsrpConnection so that it can duplicate the media to send to the SRS.</p>
+</td>
       </tr>
     </tbody>
   </table>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcCallParameters_CallRtpChannels.md&amp;value=---%0Auid%3A%20SipRecClient.SrcCallParameters.CallRtpChannels%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcCallParameters.cs/#L45">View Source</a>
+  </span>
   <h4 id="SipRecClient_SrcCallParameters_CallRtpChannels" data-uid="SipRecClient.SrcCallParameters.CallRtpChannels">CallRtpChannels</h4>
-  <div class="markdown level1 summary"><p>List of RtpChannel objects that are handling the audio, RTT and video media for the original call.</p>
+  <div class="markdown level1 summary"><p>List of RtpChannel objects that are handling the audio, RTT and video media for the original call. The list may be
+empty if the call does not contain any audio, video or RTT media.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -264,15 +290,23 @@ This may be null if the call has no MSRP media.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Rtp/RtpChannel.cs">RtpChannel</a>&gt;</td>
-        <td></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://github.com/PhrSite/SipLib/blob/b31609924cfb43a835230e394d280974dfd2162f/ClassLibrary/Rtp/RtpChannel.cs">RtpChannel</a>&gt;</td>
+        <td><p>Each RtpChannel handles the received and sent media streams. Each SrcUserAgent hooks the events of each RtpChannel
+so that it can duplicate the media to send to the SRS.</p>
+</td>
       </tr>
     </tbody>
   </table>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcCallParameters_EmergencyCallIdentifier.md&amp;value=---%0Auid%3A%20SipRecClient.SrcCallParameters.EmergencyCallIdentifier%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcCallParameters.cs/#L66">View Source</a>
+  </span>
   <h4 id="SipRecClient_SrcCallParameters_EmergencyCallIdentifier" data-uid="SipRecClient.SrcCallParameters.EmergencyCallIdentifier">EmergencyCallIdentifier</h4>
-  <div class="markdown level1 summary"><p>emergency-CallId Call-Info header purpose value for the original call.</p>
+  <div class="markdown level1 summary"><p>Call-Info header value of the Call-Info header that has a purpose parameter of &quot;emergency-CallId&quot; from the call that is
+being recorded. This field is required for NG9-1-1 calls that are being recorded.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -290,14 +324,21 @@ This may be null if the call has no MSRP media.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
+        <td><p>See Section 2.1.6 of NENA-STA-010.3b.</p>
+</td>
       </tr>
     </tbody>
   </table>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcCallParameters_EmergencyIncidentIdentifier.md&amp;value=---%0Auid%3A%20SipRecClient.SrcCallParameters.EmergencyIncidentIdentifier%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcCallParameters.cs/#L73">View Source</a>
+  </span>
   <h4 id="SipRecClient_SrcCallParameters_EmergencyIncidentIdentifier" data-uid="SipRecClient.SrcCallParameters.EmergencyIncidentIdentifier">EmergencyIncidentIdentifier</h4>
-  <div class="markdown level1 summary"><p>emergency-IncidentId Call-Info header purpose value for the original call.</p>
+  <div class="markdown level1 summary"><p>Call-Info header value of the Call-Info header that has a purpose parameter of &quot;emergency-IncidentId&quot; from the call that
+is being recorded. This field is required for NG9-1-1 calls that are being recorded.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -315,14 +356,20 @@ This may be null if the call has no MSRP media.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
+        <td><p>See Section 2.1.7 of NENA-STA-010.3b.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h3 id="properties">Properties
 </h3>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcCallParameters_FromUri.md&amp;value=---%0Auid%3A%20SipRecClient.SrcCallParameters.FromUri%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcCallParameters.cs/#L23">View Source</a>
+  </span>
   <a id="SipRecClient_SrcCallParameters_FromUri_" data-uid="SipRecClient.SrcCallParameters.FromUri*"></a>
   <h4 id="SipRecClient_SrcCallParameters_FromUri" data-uid="SipRecClient.SrcCallParameters.FromUri">FromUri</h4>
   <div class="markdown level1 summary"><p>SIP URI of the caller from the From header value of the call to be recorded.</p>
@@ -342,13 +389,20 @@ This may be null if the call has no MSRP media.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Core/SIPURI.cs">SIPURI</a></td>
-        <td></td>
+        <td><a class="xref" href="https://github.com/PhrSite/SipLib/blob/b31609924cfb43a835230e394d280974dfd2162f/ClassLibrary/Core/SIPURI.cs">SIPURI</a></td>
+        <td><p>This SIPURI identifies the originator of the call. It is used to associate the incoming media streams
+with the caller in the SIPREC metadata that is sent to the SRS.</p>
+</td>
       </tr>
     </tbody>
   </table>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcCallParameters_ToUri.md&amp;value=---%0Auid%3A%20SipRecClient.SrcCallParameters.ToUri%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcCallParameters.cs/#L30">View Source</a>
+  </span>
   <a id="SipRecClient_SrcCallParameters_ToUri_" data-uid="SipRecClient.SrcCallParameters.ToUri*"></a>
   <h4 id="SipRecClient_SrcCallParameters_ToUri" data-uid="SipRecClient.SrcCallParameters.ToUri">ToUri</h4>
   <div class="markdown level1 summary"><p>To header value from the call to be recorded.</p>
@@ -368,8 +422,10 @@ This may be null if the call has no MSRP media.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Core/SIPURI.cs">SIPURI</a></td>
-        <td></td>
+        <td><a class="xref" href="https://github.com/PhrSite/SipLib/blob/b31609924cfb43a835230e394d280974dfd2162f/ClassLibrary/Core/SIPURI.cs">SIPURI</a></td>
+        <td><p>This SIPURI identifies the called party. It is used to associate the outgoing media streams with the
+called party in the SIPREC metadata that is sent to the SRS.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -381,6 +437,12 @@ This may be null if the call has no MSRP media.</p>
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcCallParameters.md&amp;value=---%0Auid%3A%20SipRecClient.SrcCallParameters%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcCallParameters.cs/#L16" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

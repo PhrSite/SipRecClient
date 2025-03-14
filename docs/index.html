@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
 
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>This is the HOMEPAGE. </title>
+      <title>Introduction </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="This is the HOMEPAGE. ">
+      <meta name="title" content="Introduction ">
     
     
       <link rel="shortcut icon" href="favicon.ico">
@@ -47,9 +47,6 @@
 
                 <ul class="nav level1 navbar-nav">
                       <li>
-                          <a href="articles/intro.html" title="Articles">Articles</a>
-                      </li>
-                      <li>
                           <a href="api/index.html" title="Api Documentation">Api Documentation</a>
                       </li>
                 </ul>
@@ -72,19 +69,58 @@
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="this-is-the-homepage">This is the <strong>HOMEPAGE</strong>.</h1>
+<h1 id="introduction">Introduction</h1>
 
-<p>Refer to <a href="http://daringfireball.net/projects/markdown/">Markdown</a> for how to write markdown files.</p>
-<h2 id="quick-start-notes">Quick Start Notes:</h2>
+<p>The SipRecClient class library is a .NET DLL that Next Generation 9-1-1 (NG9-1-1) applications can use to record multimedia NG9-1-1 calls. Applications that use the SipLib and Ng911Lib class libraries can use this class library. The following block diagram shows the relationship between the SipRecClient class library and an NG9-1-1 application, SIP Recording Server(s) (SRS) and NG9-1-1 Log Event Servers.</p>
+<p><img src="images/SipRecClientBlockDiagram.jpg" alt="SipRecClient Block Diagram"></p>
+<p>Applications that anchor the media of NG9-1-1 multimedia calls can use this class library. This class library supports audio, video, Real Time Text (RTT) and Message Session Relay Protocol (MSRP) text media.</p>
+<p>Applications initiate and terminate recording sessions using Application Programming Interface (API) method calls to the classes in the SipRecClient class library. The classes of the SipRecClient class library notify the application of asynchronous events.</p>
+<p>The SipRecClient library implements the SIP Recording Client (SRC) interface to one or more SIP Recording Servers (SRS). Each SRS performs the actual media management and storage functions. The following two RFCs define the active SIP recording protocol which is often referred to as SIPREC.</p>
 <ol>
-<li>Add images to the <em>images</em> folder if the file is referencing an image.</li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc7866.html">Session Recording Protocol</a>, IETF, RFC 7866, May 2016.</li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc7865">Session Initiation Protocol (SIP) Recording Metadata</a>, IETF, RFC 7865.</li>
+</ol>
+<p>The SipRecClient classes send NG9-1-1 log events that relate to SIPREC calls to one or more NG9-1-1 Log Event servers See <a href="#EventLogging">NG9-1-1 Event Logging</a>, below. The application is responsible for sending all other log events to the NG9-1-1 Log Event Servers. See Section 4.12.3 and Appendix E.8 of <a href="https://cdn.ymaws.com/www.nena.org/resource/resmgr/standards/nena-sta-010.3b-2021_i3_stan.pdf">NENA-STA-010.3b</a>.</p>
+<p>The following figure shows the main classes in the SipRecClient class library.</p>
+<p><img src="images/SipRecClientDetails.jpg" alt="SipRecClient Details"></p>
+<p>The application interacts with the SipRecManager class. The SipRecManager class creates and manages one or more S4dUserAgent objects based on the configuration settings received from the application. Each SrcUserAgent implements the SIP Recording Client (SRC) portion of the SIPREC protocol and interfaces to one SIP Recording Server (SRS). All SrcUserAgent objects record all calls sent by the application.</p>
+<p>Each SrcUserAgent is independent and runs in its own task and binds to a unique IP endpoint. The SipRecClient class library supports both IPv4 and IPv6.</p>
+<h1 id="getting-started">Getting Started</h1>
+<p>An application initializes the SipRecClient class library by performing the following steps.</p>
+<ol>
+<li>Create an instance of the <a href="api/SipRecClient.SipRecSettings.html">SipRecSettings</a> class and populate it with the configuration settings for each SrcUserAgent.</li>
+<li>Create an instance of the <a href="api/SipRecClient.SrcManager.html">SrcManager</a> class.</li>
+<li>Hook the events of the SrcManager object.</li>
+<li>Call the Start() method of the SrcManager object.</li>
+</ol>
+<p>When the application is shutting down, it must call the Shutdown() method of the SipRecManager class. This method performs an orderly shutdown by forcing all SrcUserAgents to terminate any recordings that are currently in progress. Each SrcUserAgent will close its network connections and release the network resources that it is using.</p>
+<h1 id="recording-calls">Recording Calls</h1>
+<h2 id="starting-a-new-recording">Starting a New Recording</h2>
+<p>When a new NG9-1-1 call is received and answered, the application starts recording that call by performing the following steps.</p>
+<ol>
+<li>Create an instance of the <a href="api/SipRecClient.SrcCallParameters.html">SrcCallParameters</a> class. The SrcCallParameters class contains all of the information about the call that each SrcUserAgent will need to set up a SIPREC call to its associated SIP Recording Server.</li>
+<li>Call the StartRecording() method of the SrcManager class passing in the SrcCallParameters object.</li>
+</ol>
+<h2 id="ending-a-recording">Ending a Recording</h2>
+<p>When a call that is being recorded ends, the application calls the StopRecording() method of the SrcManager class. The declaration of this method is:</p>
+<pre><code>public void StopRecording(string strCallId);
+</code></pre>
+<p>The strCallId parameter is the SIP Call-ID header value of the call that is being recorded.</p>
+<h1 id="ng9-1-1-event-logging"><a name="EventLogging">NG9-1-1 Event Logging</a></h1>
+<p>Each SrcUserAgent logs the following recording related NG9-1-1 events.</p>
+<ol>
+<li>RecCallStartLogEvent</li>
+<li>RecCallEndLogEvent</li>
+<li>RecMediaStartLogEvent</li>
+<li>RecMediaEndLogEvent</li>
+<li>CallSignalingMessageLogEvent</li>
 </ol>
 
 </article>
@@ -94,6 +130,9 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/PhrSite/SipRecClient/blob/master/Documentation/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

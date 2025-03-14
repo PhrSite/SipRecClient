@@ -52,20 +52,26 @@ public class SrcUserAgent : QueuedActionWorkerTask
     private bool m_IsShutdown = false;
 
     /// <summary>
-    /// The key is the Call-ID header value of the original call, which is the same as the Call-ID of
-    /// the call to the SRS.
+    /// The key is the Call-ID header value of the original call, which is the same as the Call-ID of the call to the SRS.
     /// </summary>
     private Dictionary<string, SrcCall> m_Calls = new Dictionary<string, SrcCall>();
 
     private bool m_SrsResponding = true;
     private DateTime m_LastOptionsTime = DateTime.Now;
-    private DateTime m_LastOptionsResponseTime = DateTime.Now;
+    private SIPResponseStatusCodesEnum m_LastResponseCode = SIPResponseStatusCodesEnum.None;
+
     private SIPRequest m_OptionsReq;
     private IPEndPoint m_SrsRemoteEndPoint;
     private const int OPTIONS_TIMEOUT_MS = 1000;
 
     private SIPURI m_SrsUri;
     private I3LogEventClientMgr m_I3LogEventClientMgr;
+
+    /// <summary>
+    /// This event is fired when the status of the SRS changes. This event will not be fired if the EnableOptions property
+    /// of the SipRecRecorderSettings object for this SRC is false.
+    /// </summary>
+    public event SrsStatusDelegate? SrsStatusChanged = null;
 
     /// <summary>
     /// Constructor
@@ -77,10 +83,12 @@ public class SrcUserAgent : QueuedActionWorkerTask
     /// <param name="agencyID">Identity of the agency that is recording and logging calls</param>
     /// <param name="agentID">Identity of the agent or call taker that is recording and logging calls.</param>
     /// <param name="elementID">NG9-1-1 Element Identifier of the entity recording calls.</param>
-    /// <param name="i3EventLoggingManager">Used for logging NG9-1-1 events.</param>
+    /// <param name="i3LogEventClientMgr">Used for logging NG9-1-1 events. Required if NG9-1-1 event logging is required.
+    /// If not using NG9-1-1 event logging, pass in a default I3LogEventClientMgr object that contains an empty list
+    /// of I3LogEventClient objects.</param>
     /// <param name="enableLogging">If true then I3 event logging is enabled.</param>
     public SrcUserAgent(SipRecRecorderSettings settings, MediaPortManager portManager, X509Certificate2 certificate,
-        string agencyID, string agentID, string elementID, I3LogEventClientMgr i3LogEventClentMgr,
+        string agencyID, string agentID, string elementID, I3LogEventClientMgr i3LogEventClientMgr,
         bool enableLogging) : base(10)
     {
         m_Settings = settings;
@@ -89,7 +97,7 @@ public class SrcUserAgent : QueuedActionWorkerTask
         m_ElementID = elementID;
         m_AgencyID = agencyID;
         m_AgentID = agentID;
-        m_I3LogEventClientMgr = i3LogEventClentMgr;
+        m_I3LogEventClientMgr = i3LogEventClientMgr;
         m_EnableLogging = enableLogging;
 
         m_LocalEndPoint = IPEndPoint.Parse(m_Settings.LocalIpEndpoint);
@@ -226,19 +234,19 @@ public class SrcUserAgent : QueuedActionWorkerTask
     {
         if (sipResponse == null)
         {   // No response was received.
+            if (m_SrsResponding == true)
+                SrsStatusChanged?.Invoke(m_Settings.Name, false, SIPResponseStatusCodesEnum.None);
+
             m_SrsResponding = false;
+            m_LastResponseCode = SIPResponseStatusCodesEnum.None;
         }
         else
         {
-            if (sipResponse.Status == SIPResponseStatusCodesEnum.Ok)
-            {
-                m_SrsResponding = true;
-                m_LastOptionsResponseTime = DateTime.Now;
-            }
-            else
-            {
-                // TODO: Handle a responses other than 200 OK
-            }
+            if (m_SrsResponding == false || m_LastResponseCode != sipResponse.Status)
+                SrsStatusChanged?.Invoke(m_Settings.Name, true, sipResponse.Status);
+
+            m_SrsResponding = true;
+            m_LastResponseCode = sipResponse.Status;
         }
     }
 

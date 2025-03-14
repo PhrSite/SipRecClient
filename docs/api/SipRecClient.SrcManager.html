@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
 
@@ -47,9 +47,6 @@
 
                 <ul class="nav level1 navbar-nav">
                       <li>
-                          <a href="../articles/intro.html" title="Articles">Articles</a>
-                      </li>
-                      <li>
                           <a href="../api/index.html" title="Api Documentation">Api Documentation</a>
                       </li>
                 </ul>
@@ -72,7 +69,7 @@
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
@@ -112,6 +109,9 @@
                           </li>
                           <li class="">
                             <a href="SipRecClient.SrcUserAgent.html" title="SrcUserAgent" class="">SrcUserAgent</a>
+                          </li>
+                          <li class="">
+                            <a href="SipRecClient.SrsStatusDelegate.html" title="SrsStatusDelegate" class="">SrsStatusDelegate</a>
                           </li>
                         </ul>
                     </li>
@@ -168,8 +168,13 @@
   </div>
   <h3 id="constructors">Constructors
 </h3>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcManager__ctor_SipRecClient_SipRecSettings_SipLib_Media_MediaPortManager_System_Security_Cryptography_X509Certificates_X509Certificate2_System_String_System_String_System_String_I3V3_LoggingHelpers_I3LogEventClientMgr_System_Boolean_.md&amp;value=---%0Auid%3A%20SipRecClient.SrcManager.%23ctor(SipRecClient.SipRecSettings%2CSipLib.Media.MediaPortManager%2CSystem.Security.Cryptography.X509Certificates.X509Certificate2%2CSystem.String%2CSystem.String%2CSystem.String%2CI3V3.LoggingHelpers.I3LogEventClientMgr%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcManager.cs/#L40">View Source</a>
+  </span>
   <a id="SipRecClient_SrcManager__ctor_" data-uid="SipRecClient.SrcManager.#ctor*"></a>
   <h4 id="SipRecClient_SrcManager__ctor_SipRecClient_SipRecSettings_SipLib_Media_MediaPortManager_System_Security_Cryptography_X509Certificates_X509Certificate2_System_String_System_String_System_String_I3V3_LoggingHelpers_I3LogEventClientMgr_System_Boolean_" data-uid="SipRecClient.SrcManager.#ctor(SipRecClient.SipRecSettings,SipLib.Media.MediaPortManager,System.Security.Cryptography.X509Certificates.X509Certificate2,System.String,System.String,System.String,I3V3.LoggingHelpers.I3LogEventClientMgr,System.Boolean)">SrcManager(SipRecSettings, MediaPortManager, X509Certificate2, string, string, string, I3LogEventClientMgr, bool)</h4>
   <div class="markdown level1 summary"><p>Constructor</p>
@@ -196,7 +201,7 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://github.com/PhrSite/SipLib/blob/45d11e4b4fa98b9e6bb7820e251b678383c8ed64/ClassLibrary/Media/MediaPortManager.cs">MediaPortManager</a></td>
+        <td><a class="xref" href="https://github.com/PhrSite/SipLib/blob/b31609924cfb43a835230e394d280974dfd2162f/ClassLibrary/Media/MediaPortManager.cs">MediaPortManager</a></td>
         <td><span class="parametername">portManager</span></td>
         <td><p>Used for allocating UDP and TCP ports for media streams.</p>
 </td>
@@ -229,7 +234,10 @@ TLS (MSRPS). Required even if TLS is not currently in use.</p>
       <tr>
         <td><a class="xref" href="https://github.com/PhrSite/Ng911Lib/blob/d5dc20e6a856c3a1b0d828e4e4dc0cef5c3a53ee/ClassLibrary/I3V3.LoggingHelpers/I3LogEventClientMgr.cs">I3LogEventClientMgr</a></td>
         <td><span class="parametername">i3EventClientManager</span></td>
-        <td></td>
+        <td><p>Used for logging NG9-1-1 events. Required if NG9-1-1 event logging is required.
+If not using NG9-1-1 event logging, pass in a default I3LogEventClientMgr object that contains an empty list
+of I3LogEventClient objects.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
@@ -241,8 +249,13 @@ TLS (MSRPS). Required even if TLS is not currently in use.</p>
   </table>
   <h3 id="methods">Methods
 </h3>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcManager_HandleReInvite_SipRecClient_SrcCallParameters_.md&amp;value=---%0Auid%3A%20SipRecClient.SrcManager.HandleReInvite(SipRecClient.SrcCallParameters)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcManager.cs/#L117">View Source</a>
+  </span>
   <a id="SipRecClient_SrcManager_HandleReInvite_" data-uid="SipRecClient.SrcManager.HandleReInvite*"></a>
   <h4 id="SipRecClient_SrcManager_HandleReInvite_SipRecClient_SrcCallParameters_" data-uid="SipRecClient.SrcManager.HandleReInvite(SipRecClient.SrcCallParameters)">HandleReInvite(SrcCallParameters)</h4>
   <div class="markdown level1 summary"><p>Call this method when a call that is being recorded handles a re-INVITE.</p>
@@ -270,8 +283,13 @@ TLS (MSRPS). Required even if TLS is not currently in use.</p>
       </tr>
     </tbody>
   </table>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcManager_Shutdown.md&amp;value=---%0Auid%3A%20SipRecClient.SrcManager.Shutdown%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcManager.cs/#L86">View Source</a>
+  </span>
   <a id="SipRecClient_SrcManager_Shutdown_" data-uid="SipRecClient.SrcManager.Shutdown*"></a>
   <h4 id="SipRecClient_SrcManager_Shutdown" data-uid="SipRecClient.SrcManager.Shutdown">Shutdown()</h4>
   <div class="markdown level1 summary"><p>Shuts down the interface to each SIPREC recording server and releases all connections and resources.</p>
@@ -296,8 +314,13 @@ TLS (MSRPS). Required even if TLS is not currently in use.</p>
       </tr>
     </tbody>
   </table>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcManager_Start.md&amp;value=---%0Auid%3A%20SipRecClient.SrcManager.Start%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcManager.cs/#L74">View Source</a>
+  </span>
   <a id="SipRecClient_SrcManager_Start_" data-uid="SipRecClient.SrcManager.Start*"></a>
   <h4 id="SipRecClient_SrcManager_Start" data-uid="SipRecClient.SrcManager.Start">Start()</h4>
   <div class="markdown level1 summary"><p>Start the interface to each SIPREC recording server</p>
@@ -307,8 +330,13 @@ TLS (MSRPS). Required even if TLS is not currently in use.</p>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Start()</code></pre>
   </div>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcManager_StartRecording_SipRecClient_SrcCallParameters_.md&amp;value=---%0Auid%3A%20SipRecClient.SrcManager.StartRecording(SipRecClient.SrcCallParameters)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcManager.cs/#L101">View Source</a>
+  </span>
   <a id="SipRecClient_SrcManager_StartRecording_" data-uid="SipRecClient.SrcManager.StartRecording*"></a>
   <h4 id="SipRecClient_SrcManager_StartRecording_SipRecClient_SrcCallParameters_" data-uid="SipRecClient.SrcManager.StartRecording(SipRecClient.SrcCallParameters)">StartRecording(SrcCallParameters)</h4>
   <div class="markdown level1 summary"><p>Starts a recording session for each recording server for a new call.</p>
@@ -336,8 +364,13 @@ TLS (MSRPS). Required even if TLS is not currently in use.</p>
       </tr>
     </tbody>
   </table>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcManager_StopRecording_System_String_.md&amp;value=---%0Auid%3A%20SipRecClient.SrcManager.StopRecording(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcManager.cs/#L133">View Source</a>
+  </span>
   <a id="SipRecClient_SrcManager_StopRecording_" data-uid="SipRecClient.SrcManager.StopRecording*"></a>
   <h4 id="SipRecClient_SrcManager_StopRecording_System_String_" data-uid="SipRecClient.SrcManager.StopRecording(System.String)">StopRecording(string)</h4>
   <div class="markdown level1 summary"><p>Stops the recording session for each recorder for a call.</p>
@@ -365,6 +398,38 @@ TLS (MSRPS). Required even if TLS is not currently in use.</p>
       </tr>
     </tbody>
   </table>
+  <h3 id="events">Events
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcManager_SrsStatusChanged.md&amp;value=---%0Auid%3A%20SipRecClient.SrcManager.SrsStatusChanged%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcManager.cs/#L24">View Source</a>
+  </span>
+  <h4 id="SipRecClient_SrcManager_SrsStatusChanged" data-uid="SipRecClient.SrcManager.SrsStatusChanged">SrsStatusChanged</h4>
+  <div class="markdown level1 summary"><p>This event is fired when the status of one of the SIP Recording Servers changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event SrsStatusDelegate? SrsStatusChanged</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SipRecClient.SrsStatusDelegate.html">SrsStatusDelegate</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 
 </article>
           </div>
@@ -373,6 +438,12 @@ TLS (MSRPS). Required even if TLS is not currently in use.</p>
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SrcManager.md&amp;value=---%0Auid%3A%20SipRecClient.SrcManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SrcManager.cs/#L16" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

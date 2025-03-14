@@ -373,6 +373,12 @@ references:
   isSpec: "True"
   fullName: SipRecClient.SrcManager.Shutdown
   nameWithType: SrcManager.Shutdown
+- uid: SipRecClient.SrcManager.SrsStatusChanged
+  name: SrsStatusChanged
+  href: api/SipRecClient.SrcManager.html#SipRecClient_SrcManager_SrsStatusChanged
+  commentId: E:SipRecClient.SrcManager.SrsStatusChanged
+  fullName: SipRecClient.SrcManager.SrsStatusChanged
+  nameWithType: SrcManager.SrsStatusChanged
 - uid: SipRecClient.SrcManager.Start
   name: Start()
   href: api/SipRecClient.SrcManager.html#SipRecClient_SrcManager_Start
@@ -505,6 +511,12 @@ references:
   isSpec: "True"
   fullName: SipRecClient.SrcUserAgent.SrsResponding
   nameWithType: SrcUserAgent.SrsResponding
+- uid: SipRecClient.SrcUserAgent.SrsStatusChanged
+  name: SrsStatusChanged
+  href: api/SipRecClient.SrcUserAgent.html#SipRecClient_SrcUserAgent_SrsStatusChanged
+  commentId: E:SipRecClient.SrcUserAgent.SrsStatusChanged
+  fullName: SipRecClient.SrcUserAgent.SrsStatusChanged
+  nameWithType: SrcUserAgent.SrsStatusChanged
 - uid: SipRecClient.SrcUserAgent.Start
   name: Start()
   href: api/SipRecClient.SrcUserAgent.html#SipRecClient_SrcUserAgent_Start
@@ -547,3 +559,9 @@ references:
   isSpec: "True"
   fullName: SipRecClient.SrcUserAgent.StopRecording
   nameWithType: SrcUserAgent.StopRecording
+- uid: SipRecClient.SrsStatusDelegate
+  name: SrsStatusDelegate
+  href: api/SipRecClient.SrsStatusDelegate.html
+  commentId: T:SipRecClient.SrsStatusDelegate
+  fullName: SipRecClient.SrsStatusDelegate
+  nameWithType: SrsStatusDelegate

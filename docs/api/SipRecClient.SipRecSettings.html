@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
 
@@ -47,9 +47,6 @@
 
                 <ul class="nav level1 navbar-nav">
                       <li>
-                          <a href="../articles/intro.html" title="Articles">Articles</a>
-                      </li>
-                      <li>
                           <a href="../api/index.html" title="Api Documentation">Api Documentation</a>
                       </li>
                 </ul>
@@ -72,7 +69,7 @@
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
@@ -112,6 +109,9 @@
                           </li>
                           <li class="">
                             <a href="SipRecClient.SrcUserAgent.html" title="SrcUserAgent" class="">SrcUserAgent</a>
+                          </li>
+                          <li class="">
+                            <a href="SipRecClient.SrsStatusDelegate.html" title="SrsStatusDelegate" class="">SrsStatusDelegate</a>
                           </li>
                         </ul>
                     </li>
@@ -168,8 +168,13 @@
   </div>
   <h3 id="constructors">Constructors
 </h3>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SipRecSettings__ctor.md&amp;value=---%0Auid%3A%20SipRecClient.SipRecSettings.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SipRecSettings.cs/#L27">View Source</a>
+  </span>
   <a id="SipRecClient_SipRecSettings__ctor_" data-uid="SipRecClient.SipRecSettings.#ctor*"></a>
   <h4 id="SipRecClient_SipRecSettings__ctor" data-uid="SipRecClient.SipRecSettings.#ctor">SipRecSettings()</h4>
   <div class="markdown level1 summary"><p>Constructor</p>
@@ -181,8 +186,13 @@
   </div>
   <h3 id="properties">Properties
 </h3>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SipRecSettings_EnableSipRec.md&amp;value=---%0Auid%3A%20SipRecClient.SipRecSettings.EnableSipRec%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SipRecSettings.cs/#L16">View Source</a>
+  </span>
   <a id="SipRecClient_SipRecSettings_EnableSipRec_" data-uid="SipRecClient.SipRecSettings.EnableSipRec*"></a>
   <h4 id="SipRecClient_SipRecSettings_EnableSipRec" data-uid="SipRecClient.SipRecSettings.EnableSipRec">EnableSipRec</h4>
   <div class="markdown level1 summary"><p>Enables recording on all SIPREC recorders</p>
@@ -203,12 +213,18 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>The default is true.</p>
+</td>
       </tr>
     </tbody>
   </table>
-
-
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SipRecSettings_SipRecRecorders.md&amp;value=---%0Auid%3A%20SipRecClient.SipRecSettings.SipRecRecorders%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SipRecSettings.cs/#L22">View Source</a>
+  </span>
   <a id="SipRecClient_SipRecSettings_SipRecRecorders_" data-uid="SipRecClient.SipRecSettings.SipRecRecorders*"></a>
   <h4 id="SipRecClient_SipRecSettings_SipRecRecorders" data-uid="SipRecClient.SipRecSettings.SipRecRecorders">SipRecRecorders</h4>
   <div class="markdown level1 summary"><p>Settings for one or more SIPREC media recorders</p>
@@ -229,7 +245,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="SipRecClient.SipRecRecorderSettings.html">SipRecRecorderSettings</a>&gt;</td>
-        <td></td>
+        <td><p>The default is an empty list.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -241,6 +258,12 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/PhrSite/SipRecClient/new/master/apiSpec/new?filename=SipRecClient_SipRecSettings.md&amp;value=---%0Auid%3A%20SipRecClient.SipRecSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/PhrSite/SipRecClient/blob/master/ClassLibrary/SipRecSettings.cs/#L10" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

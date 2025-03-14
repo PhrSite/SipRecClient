@@ -6,6 +6,7 @@ using I3V3.LoggingHelpers;
 using SipLib.Media;
 using System.Security.Cryptography.X509Certificates;
 using SipLib.Logging;
+using SipLib.Core;
 
 namespace SipRecClient;
 
@@ -18,6 +19,11 @@ public class SrcManager
     private List<SrcUserAgent> m_SrcUserAgents = new List<SrcUserAgent>();
 
     /// <summary>
+    /// This event is fired when the status of one of the SIP Recording Servers changes.
+    /// </summary>
+    public event SrsStatusDelegate? SrsStatusChanged = null;
+
+    /// <summary>
     /// Constructor
     /// </summary>
     /// <param name="sipRecSettings">Settings for all SIPREC recording clients</param>
@@ -27,7 +33,9 @@ public class SrcManager
     /// <param name="agencyID">Identity of the agency that is recording and logging calls</param>
     /// <param name="agentID">Identity of the agent or call taker that is recording and logging calls.</param>
     /// <param name="elementID">NG9-1-1 Element Identifier of the entity recording calls.</param>
-    /// <param name="i3EventLoggingManager">Used for logging NG9-1-1 events.</param>
+    /// <param name="i3EventClientManager">Used for logging NG9-1-1 events. Required if NG9-1-1 event logging is required.
+    /// If not using NG9-1-1 event logging, pass in a default I3LogEventClientMgr object that contains an empty list
+    /// of I3LogEventClient objects.</param>
     /// <param name="enableLogging">If true then I3 event logging is enabled</param>
     public SrcManager(SipRecSettings sipRecSettings, MediaPortManager portManager, X509Certificate2 certificate,
         string agencyID, string agentID, string elementID, I3LogEventClientMgr i3EventClientManager, bool enableLogging)
@@ -42,9 +50,10 @@ public class SrcManager
             SrcUserAgent Ua;
             try
             {
-                Ua = new SrcUserAgent(settings, portManager, certificate, agencyID, agentID, elementID,
-                    i3EventClientManager, enableLogging);
+                Ua = new SrcUserAgent(settings, portManager, certificate, agencyID, agentID, elementID, i3EventClientManager,
+                    enableLogging);
                 m_SrcUserAgents.Add(Ua);
+                Ua.SrsStatusChanged += OnSrsStatusChanged;
             }
             catch (Exception ex)
             {
@@ -52,6 +61,11 @@ public class SrcManager
                     $"using local endpoint: {settings.LocalIpEndpoint}");
             }
         }
+    }
+
+    private void OnSrsStatusChanged(string RecorderName, bool SrsResponding, SIPResponseStatusCodesEnum ResponseCode)
+    {
+        SrsStatusChanged?.Invoke(RecorderName, SrsResponding, ResponseCode);
     }
 
     /// <summary>
@@ -73,6 +87,7 @@ public class SrcManager
     {
         foreach (SrcUserAgent Ua in m_SrcUserAgents)
         {
+            Ua.SrsStatusChanged -= OnSrsStatusChanged;  // Unhook the event
             await Ua.Shutdown();
         }
 
