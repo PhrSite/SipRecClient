@@ -12,8 +12,8 @@ The documentation pages project for this project is called [SipRecClient](https:
 
 | NuGet Package | GitHub Project | GitHub Document Pages | Description |
 |--------|--------|-------|------|
-| SipLib       | [SipLib](https://github.com/PhrSite/SipLib) | [SipLibDocumentation](https://phrsite.github.io/SipLibDocumentation) | .NET Session Initiation Protocol (SIP) protocol class library for SIP and protocol extentions for Next Generation 9-1-1 (NG9-1-1) applications |
-| Ng911Lib     | [Ng911Lib](https://github.com/PhrSite/Ng911Lib) | [Ng911LibDocumentation](https://phrsite.github.io/Ng911LibDocumentation) | .NET NG9-1-1 class library that provides C# classes for all of the XML and JSON schemas used by NG9-1-1 applications |
+| SipLib       | [SipLib](https://github.com/PhrSite/SipLib) | https://phrsite.github.io/SipLib | .NET Session Initiation Protocol (SIP) protocol class library for SIP and protocol extentions for Next Generation 9-1-1 (NG9-1-1) applications |
+| Ng911Lib     | [Ng911Lib](https://github.com/PhrSite/Ng911Lib) | https://phrsite.github.io/Ng911Lib | .NET NG9-1-1 class library that provides C# classes for all of the XML and JSON schemas used by NG9-1-1 applications |
 
 # Installation
 This class library is available on NuGet.
