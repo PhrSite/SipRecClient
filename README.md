@@ -27,7 +27,7 @@ dotnet add package SipRecClient --version 0.0.1
 To install using the NuGET Package Manager Command window type:
 
 ```
-NuGet\Install-Package SipRecClient -Version 0.0.1
+NuGet\Install-Package SipRecClient -Version x.x.x
 ```
 Or, you can install it from the Visual Studio GUI.
 

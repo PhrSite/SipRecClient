@@ -7,16 +7,16 @@
     <Title>SIP Recording (SIPREC) Client</Title>
     <Authors>Philip Reichl</Authors>
     <Description>SIP Recording (SIPREC) client .NET class library for NG9-1-1 applications</Description>
-    <Version>0.0.1</Version>
+    <Version>1.0.0</Version>
     <Copyright>2025 (c) Philip Reichl</Copyright>
     <PackageProjectUrl>https://phrsite.github.io/SipRecClient</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/PhrSite/SipRecClient</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>SIPREC;client;NG9-1-1;recording</PackageTags>
-    <PackageReleaseNotes>Initial version</PackageReleaseNotes>
-    <AssemblyVersion>0.0.1</AssemblyVersion>
-    <FileVersion>0.0.1</FileVersion>
+    <PackageReleaseNotes>v1.0.0 -- Changed the target framework to .NET 9 and updated used NuGet packages. See VersionHistory.md</PackageReleaseNotes>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
     <PackageOutputPath>c:\_MyProjects\NuGetPackages</PackageOutputPath>
   </PropertyGroup>
@@ -29,8 +29,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ng911CadIfLib" Version="1.1.1" />
-    <PackageReference Include="SipLib" Version="0.0.3" />
+    <PackageReference Include="Ng911Lib" Version="2.0.0" />
+    <PackageReference Include="SipLib" Version="0.0.4" />
   </ItemGroup>
 
 </Project>
