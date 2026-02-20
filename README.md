@@ -8,12 +8,10 @@ Applications that anchor the media of NG9-1-1 multimedia calls can use this clas
 # Documentation
 The documentation pages project for this project is called [SipRecClient](https://phrsite.github.io/SipRecClient). The documentation web site includes class documentation and articles that explain usage of the classes in this library.
 
-# External Dependancies
+# External Dependencies
 
-| NuGet Package | GitHub Project | GitHub Document Pages | Description |
-|--------|--------|-------|------|
-| SipLib       | [SipLib](https://github.com/PhrSite/SipLib) | https://phrsite.github.io/SipLib | .NET Session Initiation Protocol (SIP) protocol class library for SIP and protocol extentions for Next Generation 9-1-1 (NG9-1-1) applications |
-| Ng911Lib     | [Ng911Lib](https://github.com/PhrSite/Ng911Lib) | https://phrsite.github.io/Ng911Lib | .NET NG9-1-1 class library that provides C# classes for all of the XML and JSON schemas used by NG9-1-1 applications |
+1. SipLib (version 0.0.6 or later)
+1. Ng911Lib (version 2.0.1 or later)
 
 # Installation
 This class library is available on NuGet.
@@ -21,7 +19,7 @@ This class library is available on NuGet.
 To install it from the .NET CLI type:
 
 ```
-dotnet add package SipRecClient --version 0.0.1
+dotnet add package SipRecClient --version x.x.x
 ```
 
 To install using the NuGET Package Manager Command window type:

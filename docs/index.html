@@ -78,19 +78,19 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="introduction">Introduction</h1>
 
-<p>The SipRecClient class library is a .NET DLL that Next Generation 9-1-1 (NG9-1-1) applications can use to record multimedia NG9-1-1 calls. Applications that use the SipLib and Ng911Lib class libraries can use this class library. The following block diagram shows the relationship between the SipRecClient class library and an NG9-1-1 application, SIP Recording Server(s) (SRS) and NG9-1-1 Log Event Servers.</p>
+<p>The SipRecClient class library is a .NET DLL that Next Generation 9-1-1 (NG9-1-1) applications can use to record multimedia NG9-1-1 calls. Applications that use the <a href="https://github.com/PhrSite/SipLib">SipLib</a> and the <a href="https://github.com/PhrSite/Ng911Lib">Ng911Lib</a> class libraries can use this class library. The following block diagram shows the relationship between the SipRecClient class library, the NG9-1-1 application, SIP Recording Server(s) (SRS) and NG9-1-1 Log Event Servers.</p>
 <p><img src="images/SipRecClientBlockDiagram.jpg" alt="SipRecClient Block Diagram"></p>
 <p>Applications that anchor the media of NG9-1-1 multimedia calls can use this class library. This class library supports audio, video, Real Time Text (RTT) and Message Session Relay Protocol (MSRP) text media.</p>
 <p>Applications initiate and terminate recording sessions using Application Programming Interface (API) method calls to the classes in the SipRecClient class library. The classes of the SipRecClient class library notify the application of asynchronous events.</p>
-<p>The SipRecClient library implements the SIP Recording Client (SRC) interface to one or more SIP Recording Servers (SRS). Each SRS performs the actual media management and storage functions. The following two RFCs define the active SIP recording protocol which is often referred to as SIPREC.</p>
+<p>The SipRecClient library implements the SIP Recording Client (SRC) interface to one or more SIP Recording Servers (SRS). Each SRS performs the actual media management and storage functions. The following two RFCs define the active SIP recording protocol, which is often referred to as SIPREC.</p>
 <ol>
 <li><a href="https://www.rfc-editor.org/rfc/rfc7866.html">Session Recording Protocol</a>, IETF, RFC 7866, May 2016.</li>
 <li><a href="https://datatracker.ietf.org/doc/html/rfc7865">Session Initiation Protocol (SIP) Recording Metadata</a>, IETF, RFC 7865.</li>
 </ol>
-<p>The SipRecClient classes send NG9-1-1 log events that relate to SIPREC calls to one or more NG9-1-1 Log Event servers See <a href="#EventLogging">NG9-1-1 Event Logging</a>, below. The application is responsible for sending all other log events to the NG9-1-1 Log Event Servers. See Section 4.12.3 and Appendix E.8 of <a href="https://cdn.ymaws.com/www.nena.org/resource/resmgr/standards/nena-sta-010.3b-2021_i3_stan.pdf">NENA-STA-010.3b</a>.</p>
+<p>The SipRecClient classes send NG9-1-1 log events that relate to SIPREC calls to one or more NG9-1-1 Log Event servers. See <a href="#EventLogging">NG9-1-1 Event Logging</a>, below. The application is responsible for sending all other log events to the NG9-1-1 Log Event Servers. See Section 4.12.3 and Appendix E.8 of <a href="https://cdn.ymaws.com/www.nena.org/resource/resmgr/standards/nena-sta-010.3b-2021_i3_stan.pdf">NENA-STA-010.3b</a>.</p>
 <p>The following figure shows the main classes in the SipRecClient class library.</p>
 <p><img src="images/SipRecClientDetails.jpg" alt="SipRecClient Details"></p>
-<p>The application interacts with the SipRecManager class. The SipRecManager class creates and manages one or more S4dUserAgent objects based on the configuration settings received from the application. Each SrcUserAgent implements the SIP Recording Client (SRC) portion of the SIPREC protocol and interfaces to one SIP Recording Server (SRS). All SrcUserAgent objects record all calls sent by the application.</p>
+<p>The application interacts with the <a href="api/SipRecClient.SrcManager.html">SrcManager</a> class. The SrcManager class creates and manages one or more <a href="api/SipRecClient.SrcUserAgent.html">SrcUserAgent</a> objects based on the configuration settings received from the application. Each SrcUserAgent implements the SIP Recording Client (SRC) portion of the SIPREC protocol and interfaces to one SIP Recording Server (SRS). All SrcUserAgent objects record all calls sent by the application.</p>
 <p>Each SrcUserAgent is independent and runs in its own task and binds to a unique IP endpoint. The SipRecClient class library supports both IPv4 and IPv6.</p>
 <h1 id="getting-started">Getting Started</h1>
 <p>An application initializes the SipRecClient class library by performing the following steps.</p>
@@ -100,12 +100,12 @@
 <li>Hook the events of the SrcManager object.</li>
 <li>Call the Start() method of the SrcManager object.</li>
 </ol>
-<p>When the application is shutting down, it must call the Shutdown() method of the SipRecManager class. This method performs an orderly shutdown by forcing all SrcUserAgents to terminate any recordings that are currently in progress. Each SrcUserAgent will close its network connections and release the network resources that it is using.</p>
+<p>When the application is shutting down, it must call the Shutdown() method of the SrcManager class. This method performs an orderly shutdown by forcing all SrcUserAgents to terminate any recordings that are currently in progress. Each SrcUserAgent will close its network connections and release the network resources that it is using.</p>
 <h1 id="recording-calls">Recording Calls</h1>
 <h2 id="starting-a-new-recording">Starting a New Recording</h2>
 <p>When a new NG9-1-1 call is received and answered, the application starts recording that call by performing the following steps.</p>
 <ol>
-<li>Create an instance of the <a href="api/SipRecClient.SrcCallParameters.html">SrcCallParameters</a> class. The SrcCallParameters class contains all of the information about the call that each SrcUserAgent will need to set up a SIPREC call to its associated SIP Recording Server.</li>
+<li>Create an instance of the <a href="api/SipRecClient.SrcCallParameters.html">SrcCallParameters</a> class based on the information that it has for the call. The SrcCallParameters class contains all of the information about the call that each SrcUserAgent will need to set up a SIPREC call to its associated SIP Recording Server.</li>
 <li>Call the StartRecording() method of the SrcManager class passing in the SrcCallParameters object.</li>
 </ol>
 <h2 id="ending-a-recording">Ending a Recording</h2>
