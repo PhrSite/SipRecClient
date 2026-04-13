@@ -7,16 +7,16 @@
     <Title>SIP Recording (SIPREC) Client</Title>
     <Authors>Philip Reichl</Authors>
     <Description>SIP Recording (SIPREC) client .NET class library for NG9-1-1 applications</Description>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <Copyright>2025 (c) Philip Reichl</Copyright>
     <PackageProjectUrl>https://phrsite.github.io/SipRecClient</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/PhrSite/SipRecClient</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>SIPREC;client;NG9-1-1;recording</PackageTags>
-    <PackageReleaseNotes>v1.1.0 -- Updated NuGet version dependencies. See VersionHistory.md</PackageReleaseNotes>
-    <AssemblyVersion>1.1.0</AssemblyVersion>
-    <FileVersion>1.1.0</FileVersion>
+    <PackageReleaseNotes>v1.2.0 -- Fixed a NG9-1-1 log event. See VersionHistory.md</PackageReleaseNotes>
+    <AssemblyVersion>1.2.0</AssemblyVersion>
+    <FileVersion>1.2.0</FileVersion>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
     <PackageOutputPath>c:\_MyProjects\NuGetPackages</PackageOutputPath>
   </PropertyGroup>

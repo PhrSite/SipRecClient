@@ -969,6 +969,10 @@ public class SrcUserAgent : QueuedActionWorkerTask
         Csm.text = sipString;
         Csm.direction = Sent == true ? "outgoing" : "incoming";
 
+        // 12 Apr 26 PHR
+        Csm.ipAddressPort = remoteEndpoint.ToString();
+        Csm.callIdSip = header.CallId;
+
         m_I3LogEventClientMgr.SendLogEvent(Csm);
     }
 
